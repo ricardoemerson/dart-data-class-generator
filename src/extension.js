@@ -1115,7 +1115,7 @@ class DataClassGenerator {
 
             switch (prop.type) {
                 case 'DateTime':
-                    return `${name}${nullSafe}.millisecondsSinceEpoch${endFlag}`;
+                    return `${name}${nullSafe}.toIso8601String(){endFlag}`;
                 case 'Color':
                     return `${name}${nullSafe}.value${endFlag}`;
                 case 'IconData':
@@ -1167,7 +1167,7 @@ class DataClassGenerator {
 
             switch (prop.type) {
                 case 'DateTime':
-                    return `DateTime.fromMillisecondsSinceEpoch(${value})`;
+                    return `DateTime.parse(${value})`;
                 case 'Color':
                     return `Color(${value})`;
                 case 'IconData':
